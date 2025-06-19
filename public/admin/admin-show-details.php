@@ -41,6 +41,16 @@ if (isset($_GET['tid'])) {
         $tdeposit = htmlspecialchars($row['t_deposit']);
     } else {
         $tname = 'Records Not found';
+        $tapartment = 'Records Not found';
+        $taddress = 'Records Not found';
+        $tjob = 'Records Not found';
+        $tcont = 'Records Not found';
+        $tparent = 'Records Not found';
+        $parentCon = 'Records Not found';
+        $file_path1 = 'dashboard.php';
+        $file_path2 = 'dashboard.php';
+        $inDate = 'Records Not found';
+        $tdeposit = 'Records Not found';
     }
 } else {
     $tname = 'No ID provided';

@@ -33,12 +33,13 @@ if (mysqli_num_rows($result) > 0) {
                 <td class="py-2 px-4 border-b">' . htmlspecialchars($row["tenant_job"]) . '</td>
                 <td class="py-2 px-4 border-b">' . htmlspecialchars($row["tenant_contact"]) . '</td>
                 <td class="py-2 px-4 border-b">
-                    <a class="bg-yellow-500 text-black cursor-pointer py-1 mx-1 px-3 rounded hover:bg-yellow-600 transition duration-300">
-                        Details
-                    </a>    
-                    <a class="bg-red-500 text-black py-1 cursor-pointer px-3 rounded hover:bg-red-600 transition duration-300">
-                        Delete
-                    </a>           
+                                        <a href="admin-show-old-details.php?tid=' . htmlspecialchars($row['oldtenantid']) . ' "target="_blank" class="bg-yellow-500 text-black cursor-pointer py-1 mx-1 px-3 rounded hover:bg-yellow-600 transition duration-300"> Details </a>
+    
+                    <button onclick="openModal(' . htmlspecialchars($row['oldtenantid']) . ', \'' . addslashes(htmlspecialchars($row['tenant_name'])) . '\')" 
+                                class="bg-red-500 text-black py-1 cursor-pointer px-3 rounded hover:bg-red-600 transition duration-300">
+                              Delete
+                        </button>
+          
                 </td>
             </tr>';
         $counter++;

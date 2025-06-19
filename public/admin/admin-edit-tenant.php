@@ -145,11 +145,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="mb-6">
           <label for="id1" class="block text-sm font-medium text-gray-700">Your ID 1 (Aadhar Card)</label>
-          <input type="file" id="id1" name="id1" placeholder="Aadhar Card" value="<?php echo $tdoc1; ?>" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+
+          <?php if (!empty($tdoc1)) : ?>
+            <div class="text-sm mb-1">
+              <span class="text-gray-600">Previously uploaded:</span>
+              <a href="<?php echo $tdoc1; ?>" target="_blank" class="text-blue-600 underline">
+                <?php echo basename($tdoc1); ?>
+              </a>
+            </div>
+          <?php endif; ?>
+
+          <input type="file" id="id1" name="id1"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+           focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
         </div>
+
         <div class="mb-6">
-          <label for="id2" class="block text-sm font-medium text-gray-700">Your ID 2 (Corporate Or Educational!)</label>
-          <input type="file" id="id2" name="id2" placeholder="Occupational ID" value="<?php echo $tdoc2; ?>" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+          <label for="id1" class="block text-sm font-medium text-gray-700">Your ID 2 (Corporate Or Educational!)</label>
+
+          <?php if (!empty($tdoc2)) : ?>
+            <div class="text-sm mb-1">
+              <span class="text-gray-600">Previously uploaded:</span>
+              <a href="<?php echo $tdoc2; ?>" target="_blank" class="text-blue-600 underline">
+                <?php echo basename($tdoc2); ?>
+              </a>
+            </div>
+          <?php endif; ?>
+
+          <input type="file" id="id2" placeholder="Occupational ID" name="id2"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+           focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
         </div>
 
 

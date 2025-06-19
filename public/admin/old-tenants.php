@@ -123,7 +123,7 @@ $tenants = mysqli_fetch_all($result, MYSQLI_ASSOC);
       <table class="searchResult min-w-full bg-white">
         <thead class="border-black border-b-2">
           <tr>
-            <th class="py-2 px-4 border-b">ID</th>
+            <th class="py-2 px-4 border-b">No</th>
             <th class="py-2 px-4 border-b">Flat</th>
             <th class="py-2 px-4 border-b">Name</th>
             <th class="py-2 px-4 border-b">Job</th>

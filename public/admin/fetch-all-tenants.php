@@ -23,7 +23,13 @@ $tenants = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <td class="py-2 px-4 border-b"><?php echo htmlspecialchars($tenant['tenant_job']); ?></td>
         <td class="py-2 px-4 border-b"><?php echo htmlspecialchars($tenant['tenant_contact']); ?></td>
         <td class="py-2 px-4 border-b">
-            <a class="bg-yellow-500 text-black cursor-pointer py-1 mx-1 px-3 rounded hover:bg-yellow-600 transition duration-300">Details</a>
+            <a href="admin-show-details.php?tid=<?php echo htmlspecialchars($tenant['tenant_id']) ?>" target="_blank" class="bg-yellow-500 text-black cursor-pointer py-1 mx-1 px-3 rounded hover:bg-yellow-600 transition duration-300">
+                Details
+            </a>
+            <?php
+            // Assume $tenant['tenant_id'] is numeric and $tenant['tenant_name'] is a string
+            echo '<button onclick="openModal(' . htmlspecialchars($tenant['tenant_id']) . ', \'' . addslashes(htmlspecialchars($tenant['tenant_name'])) . '\')" class="bg-red-500 text-black py-1 cursor-pointer px-3 rounded hover:bg-red-600 transition duration-300">Delete</button>';
+            ?>
         </td>
     </tr>
 <?php endforeach; ?>

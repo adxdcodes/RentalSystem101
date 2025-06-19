@@ -36,6 +36,13 @@ if (mysqli_num_rows($result) > 0) {
                   <a href="admin-show-details.php?tid=' . htmlspecialchars($row['tenant_id']) . '" target="_blank" class="bg-yellow-500 text-black cursor-pointer py-1 mx-1 px-3 rounded hover:bg-yellow-600 transition duration-300">
                     Details
                   </a>
+
+                  <button onclick="openModal(' . htmlspecialchars($row['tenant_id']) . ', \'' . addslashes(htmlspecialchars($row['tenant_name'])) . '\')" 
+                    class="bg-red-500 text-black py-1 cursor-pointer px-3 rounded hover:bg-red-600 transition duration-300">
+                    Delete
+                </button>
+
+                  
                 </td>
             </tr>';
         $counter++;
